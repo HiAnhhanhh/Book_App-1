@@ -3,6 +3,7 @@ package com.example.book_app.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.book_app.databinding.ActivityPdfEditBinding;
 import com.example.book_app.databinding.ActivityProfileBinding;
@@ -18,6 +19,12 @@ public class ProfileEditActivity extends AppCompatActivity {
         binding = ActivityProfileEditBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
 }
