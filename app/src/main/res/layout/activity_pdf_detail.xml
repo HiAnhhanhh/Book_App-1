@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back01"
+    tools:context=".activities.PdfDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02">
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book detail"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"/>
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_back_white"
+            android:contentDescription="Back"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:contentDescription="scroll"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bookOptions"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/pdfRl"
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:background="@color/gray03">
+
+                    <com.github.barteksc.pdfviewer.PDFView
+                        android:id="@+id/pdfView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/bookTitleTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/pdfRl"
+                    android:text="@string/title_of_book"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_marginStart="10dp"/>
+
+                <TableLayout
+                    android:layout_marginStart="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/pdfRl"
+                    android:layout_below="@id/bookTitleTv">
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/categoryLabelTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                        <TextView
+                            android:id="@+id/categoryTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="@string/n_a"
+                            android:layout_marginStart="5dp"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/dateLabelTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                        <TextView
+                            android:id="@+id/dateTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="@string/n_a"
+                            android:layout_marginStart="5dp"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/sizeLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Size" />
+
+                        <TextView
+                            android:id="@+id/sizeTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="@string/n_a"
+                            android:layout_marginStart="5dp"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/viewLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="View" />
+
+                        <TextView
+                            android:id="@+id/viewTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="@string/n_a"
+                            android:layout_marginStart="5dp"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/downloadLabelTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                        <TextView
+                            android:id="@+id/downloadTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            android:text="@string/n_a"
+                            android:layout_marginStart="5dp"
+                            style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+                    </TableRow>
+
+                </TableLayout>
+                
+            </RelativeLayout>
+            
+            <TextView
+                android:id="@+id/descriptionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="The description of the book"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bookOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/readBookBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/read"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:layout_margin="10dp"
+            android:drawableTop="@drawable/ic_book_white"
+            android:background="@drawable/shape_button01"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/downloadBookBtn"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="@string/download"
+            android:drawableTop="@drawable/ic_download_white"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_button01"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
