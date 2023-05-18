@@ -207,6 +207,20 @@
                 android:text="The description of the book"
                 android:textColor="@color/black"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:background="@color/transparent"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/baseline_add_comment_24"/>
+
+            </RelativeLayout>
+
 
         </LinearLayout>
 
