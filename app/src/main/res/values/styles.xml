@@ -5,4 +5,14 @@
         <item name="cornerFamily">rounded</item>
         <item name="android:radius">20dp</item>
     </style>
+    
+    <style name="styleCircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 </resources>

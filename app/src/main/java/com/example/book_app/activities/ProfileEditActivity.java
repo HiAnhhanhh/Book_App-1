@@ -58,7 +58,6 @@ public class ProfileEditActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         firebaseAuth = FirebaseAuth.getInstance();
-
         loadUserInfo();
 
         progressDialog = new ProgressDialog(this);
@@ -84,13 +83,12 @@ public class ProfileEditActivity extends AppCompatActivity {
                 validate();
             }
         });
-
     }
     String nameTv;
     String uploadedImageUrl;
 
     private void validate() {
-        String nameTv = binding.nameEt.getText().toString().trim();
+        nameTv = binding.nameEt.getText().toString().trim();
         if(TextUtils.isEmpty(nameTv)){
             Toast.makeText(this, "Enter Name", Toast.LENGTH_SHORT).show();
         } else  {
@@ -181,8 +179,8 @@ public class ProfileEditActivity extends AppCompatActivity {
 
                         String formatDate = MyApplication.formatTimestamp(Long.parseLong(timestamp));
 
-                        binding.nameEt.setText(name);
 
+                        binding.nameEt.setText(name);
                         Glide.with(ProfileEditActivity.this)
                                 .load(profileImage)
                                 .placeholder(R.drawable.ic_person_gray)

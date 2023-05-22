@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back01"
+    android:background="@color/white"
     tools:context=".activities.PdfDetailActivity">
 
     <RelativeLayout
@@ -32,7 +32,7 @@
 
     </RelativeLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:contentDescription="scroll"
         android:layout_below="@+id/toolbarRl"
         android:layout_width="match_parent"
@@ -60,11 +60,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
 
-                    <ProgressBar
-                        android:id="@+id/progressbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerInParent="true" />
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progressbar"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_centerInParent="true" />-->
 
                 </RelativeLayout>
 
@@ -209,15 +209,60 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profileImageSiv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:strokeColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    app:shapeAppearance="@style/styleCircleImage"
+                    app:strokeWidth="1dp"
+                    android:src="@drawable/ic_person_gray"/>
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:background="@color/transparent"
+                    android:id="@+id/addCommentIb"
+                    android:contentDescription="Comment"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/baseline_add_comment_24"/>
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/transparent"
+                    android:padding="5dp"
+                    android:src="@drawable/baseline_add_comment_24" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/commentTil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/profileImageSiv"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_toStartOf="@id/addCommentIb"
+                    app:hintEnabled="false">
+
+                    <EditText
+                        android:id="@+id/commentEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Comment"
+                        android:inputType="text"
+                        android:textColorHint="@color/gray03"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentRec"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/commentTil"
+                    tools:listitem="@layout/row_comment"
+                    android:layout_marginTop="3dp" />
 
             </RelativeLayout>
 
@@ -225,7 +270,7 @@
         </LinearLayout>
 
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/bookOptions"

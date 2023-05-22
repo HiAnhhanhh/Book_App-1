@@ -45,6 +45,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitBtn"
         android:layout_below="@+id/commentTil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -69,10 +69,10 @@ public class PdfUserAdapter extends RecyclerView.Adapter<PdfUserAdapter.ViewHold
                 ""+ title,
                 holder.pdfSizeTv);
 
-        MyApplication.loadPdfFromUrl(""+ url,
-                ""+ title,
-                holder.pdfView,
-                holder.progressBar);
+//        MyApplication.loadPdfFromUrl(""+ url,
+//                ""+ title,
+//                holder.pdfView,
+//                holder.progressBar);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +113,7 @@ public class PdfUserAdapter extends RecyclerView.Adapter<PdfUserAdapter.ViewHold
             dateTv = binding.dateTv;
             categoryTv = binding.categoryTv;
             pdfView = binding.pdfView;
-            progressBar = binding.progressBar;
+//            progressBar = binding.progressBar;
         }
     }
 }

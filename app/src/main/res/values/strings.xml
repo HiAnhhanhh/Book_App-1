@@ -46,4 +46,5 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="edit_name">Edit name</string>
     <string name="add_comment">Add Comment</string>
+    <string name="comment">Comment</string>
 </resources>
